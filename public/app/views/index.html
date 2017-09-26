@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="BevApp">
+    <head>
+
+        <base href="/"> <!-- this is the one you need -->
+
+        <title>Bev site</title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.min.js"></script>
+
+        <script type="text/javascript" src="app/app.routes.js"></script>
+        <script type="text/javascript" src="app/app.js"></script>
+
+    </head>
+
+    <body>
+
+      <header>
+          <div class="navbar navbar-default">
+              <div class="container">
+                  <ul class="nav navbar-nav navbar-right">
+                      <li><a href="/login">Login</a></li>
+                      <li><a href="/home">Home</a></li>
+                  </ul>
+              </div>
+          </div>
+
+      </header>
+
+      <main class="container">
+        <div ng-view></div>
+      </main>
+
+    </body>
+</html>
