@@ -11,21 +11,35 @@
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.min.js"></script>
 
+        <!-- Configurations -->
+        <script type="text/javascript" src="app/app.config.js"></script>
+
+        <!-- Services -->
+        <script type="text/javascript" src="app/services/auth.service.js"></script>
+
+        <!-- Controllers -->
+        <script type="text/javascript" src="app/controllers/main.controller.js"></script>
+        <script type="text/javascript" src="app/controllers/auth.controller.js"></script>
+
+        <!-- Routes -->
         <script type="text/javascript" src="app/app.routes.js"></script>
+
         <script type="text/javascript" src="app/app.js"></script>
 
     </head>
 
-    <body>
+    <body ng-controller="MainController as main">
 
       <header>
-          <div class="navbar navbar-default">
-              <div class="container">
-                  <ul class="nav navbar-nav navbar-right">
-                      <li><a href="/login">Login</a></li>
-                      <li><a href="/home">Home</a></li>
-                  </ul>
-              </div>
+        <div class="navbar navbar-default">
+            <div class="container">
+              <ul class="nav navbar-nav navbar-right">
+                  <li><a href="/home">Home</a></li>
+                  <li ng-if="!main.loggedIn"><a href="/login">Login</a></li>
+                  <li ng-if="main.loggedIn"><a href="#">Hello {{ main.user.username }}</a></li>
+                  <li ng-if="main.loggedIn"><a href="#" ng-click="AuthController.doLogout()">Logout</a></li>
+              </ul>
+            </div>
           </div>
 
       </header>

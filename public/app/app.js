@@ -1,1 +1,1 @@
-angular.module('BevApp', ['appRoutes'])
+angular.module('BevApp', ['appConfig', 'appRoutes', 'authService', 'mainCtrl', 'authCtrl']);
